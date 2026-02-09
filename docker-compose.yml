@@ -6,6 +6,5 @@ services:
     ports:
       - "8085:80"
     volumes:
-      # Nokta yerine bu değişkeni kullanıyoruz:
-      - ${DOCKER_COMPOSE_DIR}:/usr/share/nginx/html:ro
+      - .:/usr/share/nginx/html
     restart: always
