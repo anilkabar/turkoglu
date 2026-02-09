@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  web:
+    image: nginx:stable-alpine
+    container_name: turkoglu_nginx
+    ports:
+      - "8085:80"
+    volumes:
+      - .:/usr/share/nginx/html
+    restart: always
