@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkoğlu | Galeri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <div><i class="fas fa-phone"></i> +05332168215</div>
+            <div><i class="fas fa-clock"></i> 7/24 Teknik Destek</div>
+        </div>
+    </div>
+
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Turk<span>Oğlu</span></div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Anasayfa</a></li>
+                <li><a href="hakkimizda.html">Kurumsal</a></li>
+                <li><a href="index.html#services">Hizmetler</a></li>
+                <li><a href="galeri.html" style="color: var(--secondary);">Galeri</a></li>
+                <li><a href="index.html#fleet">Referanslar</a></li>
+                <li><a href="index.html#contact" class="btn-nav">Teklif Al</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger-btn"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+
+    <header class="hero"
+        style="height: 30vh; background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('img/galeri-bg.jpg');">
+        <div class="container">
+            <h1 style="font-size: 3rem;">Operasyon Galerisi</h1>
+            <p>Tersanemizden ve bakım süreçlerimizden kareler.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="img/1.jpeg" alt="Gemi Bakım 1">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/2.jpeg" alt="Gemi Bakım 2">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/3.jpeg" alt="Gemi Bakım 3">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/4.jpeg" alt="Gemi Bakım 4">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/5.jpeg" alt="Gemi Bakım 5">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/6.jpeg" alt="Gemi Bakım 6">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">Turk<span>Oğlu</span></div>
+                    <p>20 yılı aşkın tecrübemizle dünya denizlerinde güven inşa ediyoruz. Modern tersanelerimizde
+                        teknoloji ve ustalığı birleştiriyoruz.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Kurumsal</h4>
+                    <ul>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="#fleet">Referanslar</a></li>
+                        <li><a href="#">Kalite Belgelerimiz</a></li>
+                        <li><a href="#">KVKK Aydınlatma</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Hizmetlerimiz</h4>
+                    <ul>
+                        <li><a href="#">Motor Revizyonu</a></li>
+                        <li><a href="#">Havuzlama & Boya</a></li>
+                        <li><a href="#">Elektrik Otomasyon</a></li>
+                        <li><a href="#">Sac & Kaynak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Bülten</h4>
+                    <p>Gelişmelerden haberdar olun.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="E-posta adresi">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
