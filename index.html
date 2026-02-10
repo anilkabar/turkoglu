@@ -1,174 +1,382 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turkoğlu | Gemi Bakım & Teknik Servis</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Turkoğlu | Ağır Sanayi & Endüstriyel Çözümler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
+    <!-- TOP BAR -->
     <div class="top-bar">
         <div class="container">
-            <div><i class="fas fa-phone"></i> +05332168215</div>
-            <div><i class="fas fa-clock"></i> 7/24 Teknik Destek</div>
+            <div class="top-bar-left">
+                <span><i class="fas fa-phone"></i> +90 533 216 82 15</span>
+                <span><i class="fas fa-envelope"></i> info@turkoglushipyard.com.tr</span>
+            </div>
+            <div class="top-bar-right">
+                <span><i class="fas fa-clock"></i> 7/24 Acil Servis</span>
+                <span><i class="fas fa-map-marker-alt"></i> Tuzla / İstanbul</span>
+            </div>
         </div>
     </div>
 
-    <nav class="navbar">
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
         <div class="container">
-            <div class="logo">Turk<span>Oğlu</span></div>
+            <a href="index.html" class="logo">
+                <img src="img/logo/logo.png" width="110px" alt="Turkoğlu Gemi Bakım" class="logo">
+        
+            </a>
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html" style="color: var(--secondary);">Anasayfa</a></li>
+                <li><a href="index.html" class="active">Anasayfa</a></li>
                 <li><a href="hakkimizda.html">Kurumsal</a></li>
                 <li><a href="#services">Hizmetler</a></li>
                 <li><a href="galeri.html">Galeri</a></li>
-                <li><a href="#fleet">Referanslar</a></li>
-                <li><a href="#contact" class="btn-nav">İletişim</a></li>
+                <li><a href="#references">Referanslar</a></li>
+                <li><a href="#contact" class="btn-nav">Teklif Al</a></li>
             </ul>
-            <div class="hamburger" id="hamburger-btn"><i class="fas fa-bars"></i></div>
+            <div class="hamburger" id="hamburger-btn">
+                <span></span><span></span><span></span>
+            </div>
         </div>
     </nav>
-    <header id="home" class="hero-slider">
-        <div class="slide active"
-            style="background-image: linear-gradient(rgba(10, 25, 47, 0.75), rgba(10, 25, 47, 0.75)), url('img/anasayfa1.jpeg');">
-            <div class="container slide-content">
-                <h1>Denizlerde <span>Güçlü</span> ve Güvende Kalın</h1>
-                <p>Uluslararası standartlarda gemi bakım ve onarım çözümleri.</p>
-                <div class="hero-btns">
-                    <a href="#services" class="btn btn-main">Hizmetleri İncele</a>
-                    <a href="#contact" class="btn btn-sub">İletişime Geç</a>
-                </div>
+
+    <!-- HERO -->
+    <header class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-noise"></div>
+            <div class="hero-grid"></div>
+        </div>
+        <div class="hero-slider">
+          <div class="slide active"
+     data-line1="AĞIR SANAYİ"
+     data-line2="ÇELİK & PROSES"
+     data-line3="ÇÖZÜMLER"
+     data-desc="Silo kumlama'dan yeni inşa gemiye, fabrika sökümünden arıtma tesisine — sahadayız.">
+    <div class="slide-bg" style="background-image: url('img/anasayfa1.jpeg');"></div>
+</div>
+
+<div class="slide"
+     data-line1="GEMİ"
+     data-line2="İNŞA & BAKIM"
+     data-line3="HİZMETLERİ"
+     data-desc="Yeni inşa, havuz bakımı ve endüstriyel gemi projelerinde uzman kadro.">
+    <div class="slide-bg" style="background-image: url('img/anasayfa2.jpeg');"></div>
+</div>
+
+<div class="slide"
+     data-line1="ENDÜSTRİYEL"
+     data-line2="TESİS & ALTYAPI"
+     data-line3="ÇÖZÜMLERİ"
+     data-desc="Arıtma tesisleri, çelik konstrüksiyon ve fabrika projelerinde anahtar teslim.">
+    <div class="slide-bg" style="background-image: url('img/anasayfa3.jpeg');"></div>
+</div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-tag"><span>// ENDÜSTRİYEL UZMANLARI</span></div>
+            <h1 class="hero-title">
+                <span class="line" data-line="1">AĞIR SANAYİ</span>
+                <span class="line accent" data-line="2">ÇELİK & PROSES</span>
+                <span class="line" data-line="3">ÇÖZÜMLER</span>
+            </h1>
+            <p class="hero-desc">Silo kumlama'dan yeni inşa gemiye, fabrika sökümünden arıtma tesisine — sahadayız.</p>
+            <div class="hero-btns">
+                <a href="#services" class="btn btn-primary">Hizmetleri İncele</a>
+                <a href="#contact" class="btn btn-ghost">Teklif Al <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-scroll">
+                <div class="scroll-line"></div>
+        
             </div>
         </div>
-
-        <div class="slide"
-            style="background-image: linear-gradient(rgba(10, 25, 47, 0.75), rgba(10, 25, 47, 0.75)), url('img/anasayfa2.jpeg');">
-            <div class="container slide-content">
-                <h1>Profesyonel <span>Teknik</span> Destek</h1>
-                <p>7/24 kesintisiz mühendislik ve onarım hizmetleri ile yanınızdayız.</p>
-                <div class="hero-btns">
-                    <a href="#services" class="btn btn-main">Hizmetleri İncele</a>
-                    <a href="#contact" class="btn btn-sub">İletişime Geç</a>
+        <div class="hero-counter-bar">
+            <div class="container">
+                <div class="hcb-item">
+                    <strong><span class="counter-target" data-target="850">0</span>+</strong>
+                    <span>Tamamlanan Proje</span>
                 </div>
-            </div>
-        </div>
-
-        <div class="slide"
-            style="background-image: linear-gradient(rgba(10, 25, 47, 0.75), rgba(10, 25, 47, 0.75)), url('img/anasayfa3.jpeg');">
-            <div class="container slide-content">
-                <h1>Global <span>Tersane</span> Ağı</h1>
-                <p>Tuzla ve Yalova bölgelerinde modern tesislerimizde kalite odaklı işçilik.</p>
-                <div class="hero-btns">
-                    <a href="#services" class="btn btn-main">Hizmetleri İncele</a>
-                    <a href="#contact" class="btn btn-sub">İletişime Geç</a>
+                <div class="hcb-item">
+                    <strong><span class="counter-target" data-target="15">0</span></strong>
+                    <span>Yıllık Tecrübe</span>
+                </div>
+                <div class="hcb-item">
+                    <strong><span class="counter-target" data-target="120">0</span>+</strong>
+                    <span>Aktif Müşteri</span>
+                </div>
+                <div class="hcb-item">
+                    <strong>7/24</strong>
+                    <span>Acil Servis</span>
                 </div>
             </div>
         </div>
     </header>
-    <section class="section bg-light">
+    
+
+
+
+    <!-- MARQUEE BAND -->
+    <div class="marquee-band">
+        <div class="marquee-track">
+            <span>SİLO KUMLAMA</span><span class="dot">●</span>
+            <span>GİRİT KAZANI</span><span class="dot">●</span>
+            <span>VAKUM SİLOSU</span><span class="dot">●</span>
+            <span>ARITMA TESİSİ</span><span class="dot">●</span>
+            <span>ÇELİK KONSTRÜKSİYON</span><span class="dot">●</span>
+            <span>YANGIN MERDİVENİ</span><span class="dot">●</span>
+            <span>FABRİKA SÖKÜM</span><span class="dot">●</span>
+            <span>RANZA SİSTEMİ</span><span class="dot">●</span>
+            <span>HORTUM MAKARASI</span><span class="dot">●</span>
+            <span>KOLEKTÖRler</span><span class="dot">●</span>
+            <span>YENİ İNŞA GEMİ</span><span class="dot">●</span>
+            <span>TAMİR GEMİSİ</span><span class="dot">●</span>
+            <span>BOYA RASPA</span><span class="dot">●</span>
+            <span>KONTEYNİR</span><span class="dot">●</span>
+            <!-- repeat for infinite -->
+            <span>SİLO KUMLAMA</span><span class="dot">●</span>
+            <span>GİRİT KAZANI</span><span class="dot">●</span>
+            <span>VAKUM SİLOSU</span><span class="dot">●</span>
+            <span>ARITMA TESİSİ</span><span class="dot">●</span>
+            <span>ÇELİK KONSTRÜKSİYON</span><span class="dot">●</span>
+            <span>YANGIN MERDİVENİ</span><span class="dot">●</span>
+            <span>FABRİKA SÖKÜM</span><span class="dot">●</span>
+            <span>RANZA SİSTEMİ</span><span class="dot">●</span>
+        </div>
+    </div>
+
+    <!-- ABOUT STRIP -->
+    <section class="about-strip section">
         <div class="container">
-            <h2 class="section-title">Neden Turkoğlu?</h2>
-            <div class="grid-3">
-                <div class="service-card">
-                    <i class="fas fa-certificate card-icon"></i>
-                    <h3>Sertifikalı Kalite</h3>
-                    <p>Tüm süreçlerimiz klas kuruluşları (Lloyd's, ABS, BV) standartlarına uygundur.</p>
+            <div class="about-strip-inner">
+                <div class="about-strip-text">
+                    <div class="section-tag">// HAKKIMIZDA</div>
+                    <h2>Türkiye'nin Ağır Sanayi <em>Çözüm Ortağı</em></h2>
+                    <p>15 yılı aşkın deneyimimizle silo üretimi, gemi inşa-tamir, çelik konstrüksiyon ve endüstriyel tesis kurulumunda güvenilir tercih olmaya devam ediyoruz. Her projede sahada, her sorunla başa çıkmak için donanımlıyız.</p>
+                    <a href="hakkimizda.html" class="btn btn-outline">Daha Fazla Bilgi</a>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-clock card-icon"></i>
-                    <h3>Hızlı Teslimat</h3>
-                    <p>Gemi duruş sürelerinin maliyetini biliyor, 7/24 kesintisiz operasyon yürütüyoruz.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-network-wired card-icon"></i>
-                    <h3>Global Servis</h3>
-                    <p>Sadece tersanemizde değil, dünyanın her limanında mobil ekiplerimizle yanınızdayız.</p>
+                <div class="about-strip-visual">
+                    <div class="av-box av-box-1">
+                        <i class="fas fa-industry"></i>
+                        <strong>Ağır Sanayi</strong>
+                        <span>Çelik & Proses</span>
+                    </div>
+                    <div class="av-box av-box-2">
+                        <i class="fas fa-ship"></i>
+                        <strong>Denizcilik</strong>
+                        <span>İnşa & Tamir</span>
+                    </div>
+                    <div class="av-box av-box-3">
+                        <i class="fas fa-hard-hat"></i>
+                        <strong>Tesis Kurulum</strong>
+                        <span>Anahtar Teslim</span>
+                    </div>
+                    <div class="av-box av-box-4">
+                        <i class="fas fa-spray-can"></i>
+                        <strong>Boya & Raspa</strong>
+                        <span>Tedarik & Uygulama</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="section bg-light">
+    <!-- SERVICES -->
+    <section id="services" class="services-section section">
+        <div class="noise-overlay"></div>
         <div class="container">
-            <h2 class="section-title">Hizmetlerimiz</h2>
-            <div class="grid-3">
-                <div class="service-card">
-                    <div class="card-icon"><i class="fas fa-tools"></i></div>
-                    <h3>Motor Revizyonu</h3>
-                    <p>Ana makine ve yardımcı makinelerin periyodik ağır bakımları.</p>
+            <div class="section-header">
+                <div class="section-tag">// HİZMETLERİMİZ</div>
+                <h2>Ne Yapıyoruz?</h2>
+                <p>Sahadaki her ihtiyacınız için kapsamlı çözümler</p>
+            </div>
+            <div class="services-grid">
+
+                <div class="srv-card" data-index="01">
+                    <div class="srv-icon"><i class="fas fa-database"></i></div>
+                    <div class="srv-content">
+                        <h3>Silo Kumlama & Tesis</h3>
+                        <p>Her kapasitede silo kumlama kazanı imalatı, kurulumu ve devreye alınması. Anahtar teslim silo tesisi kurulumu.</p>
+                        <ul class="srv-list">
+                            <li>Silo Kumlama Kazanı</li>
+                            <li>Vakum Silosu</li>
+                            <li>Girit Kazanı</li>
+                            <li>Silo Tesisi Kurulumu</li>
+                        </ul>
+                    </div>
+                    <div class="srv-number">01</div>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon"><i class="fas fa-ship"></i></div>
-                    <h3>Havuzlama</h3>
-                    <p>Raspa, boya ve su altı sistemlerinin modernizasyonu.</p>
+
+                <div class="srv-card" data-index="02">
+                    <div class="srv-icon"><i class="fas fa-water"></i></div>
+                    <div class="srv-content">
+                        <h3>Arıtma Tesisi</h3>
+                        <p>Endüstriyel ve evsel atıksu arıtma tesisi kurulumu, bakımı ve teknik desteği.</p>
+                        <ul class="srv-list">
+                            <li>Tesis Kurulumu</li>
+                            <li>Bakım & Onarım</li>
+                            <li>Teknik Danışmanlık</li>
+                        </ul>
+                    </div>
+                    <div class="srv-number">02</div>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon"><i class="fas fa-bolt"></i></div>
-                    <h3>Otomasyon</h3>
-                    <p>Navigasyon ve gemi kontrol sistemleri teknik desteği.</p>
+
+                <div class="srv-card" data-index="03">
+                    <div class="srv-icon"><i class="fas fa-hard-hat"></i></div>
+                    <div class="srv-content">
+                        <h3>Çelik Konstrüksiyon</h3>
+                        <p>Endüstriyel yapılar, yangın merdivenleri, platform ve iskele sistemleri, sac-kaynak imalatı.</p>
+                        <ul class="srv-list">
+                            <li>Yangın Merdiveni</li>
+                            <li>Platform & İskele</li>
+                            <li>Çelik Kondisyon</li>
+                            <li>Sac & Kaynak</li>
+                        </ul>
+                    </div>
+                    <div class="srv-number">03</div>
+                </div>
+
+                <div class="srv-card" data-index="04">
+                    <div class="srv-icon"><i class="fas fa-ship"></i></div>
+                    <div class="srv-content">
+                        <h3>Gemi İnşa & Tamir</h3>
+                        <p>Yeni inşa gemi projeleri ve her tip geminin tamir, bakım, onarım hizmetleri.</p>
+                        <ul class="srv-list">
+                            <li>Yeni İnşa Gemi</li>
+                            <li>Tamir Gemisi</li>
+                            <li>Konteyner (Her Epatta)</li>
+                        </ul>
+                    </div>
+                    <div class="srv-number">04</div>
+                </div>
+
+                <div class="srv-card" data-index="05">
+                    <div class="srv-icon"><i class="fas fa-spray-can"></i></div>
+                    <div class="srv-content">
+                        <h3>Boya Raspa Tedariği</h3>
+                        <p>Endüstriyel boya ve raspa malzemeleri tedariği, uygulama ve danışmanlık hizmetleri.</p>
+                        <ul class="srv-list">
+                            <li>Malzeme Tedariği</li>
+                            <li>Raspa Uygulaması</li>
+                            <li>Boya Sistemleri</li>
+                        </ul>
+                    </div>
+                    <div class="srv-number">05</div>
+                </div>
+
+                <div class="srv-card" data-index="06">
+                    <div class="srv-icon"><i class="fas fa-tools"></i></div>
+                    <div class="srv-content">
+                        <h3>Fabrika Söküm & Ekipman</h3>
+                        <p>Fabrika ve tesis söküm projeleri, ranza sistemi, hortum makarası ve kolektör imalatı.</p>
+                        <ul class="srv-list">
+                            <li>Fabrika Söküm</li>
+                            <li>Ranza Sistemi</li>
+                            <li>Hortum Makarası</li>
+                            <li>Kolektör İmalatı</li>
+                        </ul>
+                    </div>
+                    <div class="srv-number">06</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why-us section">
+        <div class="container">
+            <div class="section-tag center">// NEDEN BİZ?</div>
+            <h2 class="center">Tercih Edilme Sebebimiz</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-bolt"></i></div>
+                    <h4>Hızlı Teslimat</h4>
+                    <p>Proje takvimlerine mutlak uyum, acil işlerde sahaya anında müdahale.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Kalite Güvencesi</h4>
+                    <p>Her üretim aşamasında kalite kontrol, standartlara tam uyum.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-users-cog"></i></div>
+                    <h4>Uzman Kadro</h4>
+                    <p>Alanında deneyimli mühendis ve teknisyen ekibimizle tüm proses hizmetleri.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fa-solid fa-turkish-lira-sign"></i></div>
+                    <h4>Rekabetçi Fiyat</h4>
+                    <p>Bütçenize göre özel fiyatlandırma ve esnek ödeme seçenekleri.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="stats section">
-        <div class="container stats-grid">
-            <div class="stat-item">
-                <h2 style="color: var(--secondary);"><span class="counter-target" data-target="500">0</span>+</h2>
-                <p>Tamamlanan Gemi</p>
-            </div>
-            <div class="stat-item">
-                <h2 style="color: var(--secondary);"><span class="counter-target" data-target="20">0</span></h2>
-                <p>Yıllık Tecrübe</p>
-            </div>
-            <div class="stat-item">
-                <h2 style="color: var(--secondary);"><span class="counter-target" data-target="24">0</span>/7</h2>
-                <p>Mobil Servis</p>
-            </div>
-            <div class="stat-item">
-                <h2 style="color: var(--secondary);">%<span class="counter-target" data-target="100">0</span></h2>
-                <p>Müşteri Memnuniyeti</p>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="fleet" class="section bg-light">
+    <!-- REFERENCES TABLE -->
+    <section id="references" class="references-section section">
+        <div class="noise-overlay"></div>
         <div class="container">
-            <h2 class="section-title">Referans Projeler</h2>
+            <div class="section-header light">
+                <div class="section-tag">// REFERANSLAR</div>
+                <h2>Tamamlanan Projeler</h2>
+            </div>
             <div class="table-container">
                 <table class="styled-table">
                     <thead>
                         <tr>
-                            <th>Gemi Adı</th>
-                            <th>İşlem</th>
+                            <th>#</th>
+                            <th>Proje / Tesis</th>
+                            <th>Hizmet Türü</th>
                             <th>Lokasyon</th>
                             <th>Durum</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>MV Barbaros</strong></td>
-                            <td>Ana Makine Bakımı</td>
-                            <td>Tuzla</td>
-                            <td><span class="tag">Tamamlandı</span></td>
+                            <td class="ref-no">001</td>
+                            <td><strong>XYZ Çimento Fabrikası</strong></td>
+                            <td>Silo Kumlama Tesisi</td>
+                            <td>Kocaeli</td>
+                            <td><span class="tag done">Tamamlandı</span></td>
                         </tr>
                         <tr>
-                            <td><strong>Ocean Star</strong></td>
-                            <td>Havuzlama & Boya</td>
+                            <td class="ref-no">002</td>
+                            <td><strong>MV Karadeniz</strong></td>
+                            <td>Yeni İnşa Gemi</td>
+                            <td>Tuzla</td>
+                            <td><span class="tag done">Tamamlandı</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ref-no">003</td>
+                            <td><strong>ABC Tekstil Fabrikası</strong></td>
+                            <td>Arıtma Tesisi Kurulumu</td>
+                            <td>Bursa</td>
+                            <td><span class="tag done">Tamamlandı</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ref-no">004</td>
+                            <td><strong>Liman Tesisi No:7</strong></td>
+                            <td>Yangın Merdiveni & Çelik Kons.</td>
+                            <td>İzmir</td>
+                            <td><span class="tag progress">Devam Ediyor</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ref-no">005</td>
+                            <td><strong>DEF Gıda San. A.Ş.</strong></td>
+                            <td>Vakum Silosu & Girit Kazanı</td>
+                            <td>Konya</td>
+                            <td><span class="tag done">Tamamlandı</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ref-no">006</td>
+                            <td><strong>Ocean Freight Ltd.</strong></td>
+                            <td>Konteyner Tamir (Her Epatta)</td>
                             <td>Yalova</td>
-                            <td><span class="tag">Tamamlandı</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Blue Wave</strong></td>
-                            <td>Sac Değişimi</td>
-                            <td>Tuzla</td>
-                            <td><span class="tag">Tamamlandı</span></td>
+                            <td><span class="tag done">Tamamlandı</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -176,71 +384,144 @@
         </div>
     </section>
 
-    <section id="contact" class="section">
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section section">
         <div class="container">
-            <h2 class="section-title">İletişim</h2>
-            <div class="contact-wrapper">
-                <div class="contact-details">
-                    <h2>Teknik Destek Hattı</h2>
-                    <p>Geminize özel bakım planı ve maliyet çalışması için form doldurun.</p>
-                    <div class="info-item"><i class="fas fa-envelope"></i> info@turkoglushipyard.com</div>
-                    <div class="info-item"><i class="fas fa-phone"></i> +95332168215</div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="section-tag">// İLETİŞİM</div>
+                    <h2>Projenizi <em>Konuşalım</em></h2>
+                    <p>Sahadaki her ihtiyacınız için yanınızdayız. Ücretsiz keşif ve fiyat teklifi için bize ulaşın.</p>
+                    <div class="cinfo-items">
+                        <div class="cinfo-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Telefon</strong>
+                                <span>+90 533 216 82 15</span>
+                            </div>
+                        </div>
+                        <div class="cinfo-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>E-Posta</strong>
+                                <span>info@turkoglushipyard.com.tr</span>
+                            </div>
+                        </div>
+                        <div class="cinfo-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Adres</strong>
+                                <span>Tuzla Organize Sanayi Bölgesi, İstanbul</span>
+                            </div>
+                        </div>
+                        <div class="cinfo-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Çalışma Saatleri</strong>
+                                <span>Hafta içi 08:00–18:00 / Acil 7/24</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="İsim / Şirket Ünvanı" required>
-                    <input type="email" placeholder="E-posta" required>
-                    <textarea rows="4" placeholder="Teknik detayları buraya yazınız..." required></textarea>
-                    <button type="submit" class="btn btn-main">Talebi Gönder</button>
-                </form>
+                <div class="contact-form-wrap">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Ad Soyad / Şirket</label>
+                                <input type="text" placeholder="Şirket Ünvanı" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Telefon</label>
+                                <input type="tel" placeholder="+90 5XX XXX XX XX">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>E-Posta</label>
+                            <input type="email" placeholder="ornek@firma.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Hizmet Türü</label>
+                            <select>
+                                <option value="">Hizmet Seçin</option>
+                                <option>Silo Kumlama & Tesis</option>
+                                <option>Arıtma Tesisi</option>
+                                <option>Çelik Konstrüksiyon</option>
+                                <option>Gemi İnşa & Tamir</option>
+                                <option>Boya Raspa Tedariği</option>
+                                <option>Fabrika Söküm & Ekipman</option>
+                                <option>Diğer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Proje Detayları</label>
+                            <textarea rows="4" placeholder="Projeniz hakkında kısaca bilgi verin..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary full-width">
+                            Teklif Talebi Gönder <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo">Turk<span>Oğlu</span></div>
-                    <p>20 yılı aşkın tecrübemizle dünya denizlerinde güven inşa ediyoruz. Modern tersanelerimizde
-                        teknoloji ve ustalığı birleştiriyoruz.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col brand-col">
+                        <div class="footer-logo">
+                            <img src="img/logo/logo.png" width="130px" alt="Turkoğlu Gemi Bakım" class="logo">
+                            
+                        </div>
+                        <p>Ağır sanayi ve endüstriyel çözümlerde 15 yılı aşkın tecrübeyle her sahada güvenilir çözüm ortağınız.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Hizmetler</h4>
+                        <ul>
+                            <li><a href="#services">Silo Kumlama & Tesis</a></li>
+                            <li><a href="#services">Arıtma Tesisi</a></li>
+                            <li><a href="#services">Çelik Konstrüksiyon</a></li>
+                            <li><a href="#services">Gemi İnşa & Tamir</a></li>
+                            <li><a href="#services">Boya Raspa Tedariği</a></li>
+                            <li><a href="#services">Fabrika Söküm</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Kurumsal</h4>
+                        <ul>
+                            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                            <li><a href="galeri.html">Galeri</a></li>
+                            <li><a href="#references">Referanslar</a></li>
+                            <li><a href="#">Kalite Belgelerimiz</a></li>
+                            <li><a href="#">KVKK Aydınlatma</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>İletişim</h4>
+                        <ul class="footer-contact-list">
+                            <li><i class="fas fa-phone"></i> +90 533 216 82 15</li>
+                            <li><i class="fas fa-envelope"></i> info@turkoglushipyard.com.tr</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Tuzla OSB, İstanbul</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h4>Kurumsal</h4>
-                    <ul>
-                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                        <li><a href="#fleet">Referanslar</a></li>
-                        <li><a href="#">Kalite Belgelerimiz</a></li>
-                        <li><a href="#">KVKK Aydınlatma</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Hizmetlerimiz</h4>
-                    <ul>
-                        <li><a href="#">Motor Revizyonu</a></li>
-                        <li><a href="#">Havuzlama & Boya</a></li>
-                        <li><a href="#">Elektrik Otomasyon</a></li>
-                        <li><a href="#">Sac & Kaynak</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Bülten</h4>
-                    <p>Gelişmelerden haberdar olun.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="E-posta adresi">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
             </div>
-
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Türkoğlu Gemi İnşaa Bakım ve Onarım Ltd Şti. Tüm Hakları Saklıdır.</p>
+            
+            </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>

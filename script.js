@@ -1,124 +1,183 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // HERO SLIDER MANTIĞI
-    const slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
-    const slideInterval = 5000; // 5 saniyede bir değişir
-
-    const nextSlide = () => {
-        // Mevcut slayttan active class'ını al
-        slides[currentSlide].classList.remove('active');
-        // Bir sonraki slayta geç
-        currentSlide = (currentSlide + 1) % slides.length;
-        // Yeni slayta active class'ını ver
-        slides[currentSlide].classList.add('active');
-    };
-
-    // Eğer sayfada slider varsa otomatik başlat
-    if (slides.length > 0) {
-        setInterval(nextSlide, slideInterval);
-    }
-
-    // 1. MOBİL MENÜ KONTROLÜ
+    // 1. MOBİL MENÜ
     const hamburger = document.getElementById('hamburger-btn');
     const navLinks = document.getElementById('nav-links');
-
     if (hamburger && navLinks) {
         hamburger.addEventListener('click', (e) => {
             e.stopPropagation();
             navLinks.classList.toggle('active');
+            hamburger.classList.toggle('open');
         });
-
-        // Menü içindeki linklere tıklanınca menüyü kapat
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('open');
+            }
+        });
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => navLinks.classList.remove('active'));
-        });
-
-        // Ekranın herhangi bir yerine tıklanınca menüyü kapat
-        document.addEventListener('click', () => {
-            navLinks.classList.remove('active');
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('open');
+            });
         });
     }
 
-    // 2. SAYI ARTIRMA (COUNTER) EFEKTİ
-    const startCounter = (targetElement) => {
-        const targetValue = +targetElement.getAttribute('data-target');
-        const duration = 2000; // Animasyon toplam 2 saniye sürsün
-        const stepTime = 15; // Her adım arası milisaniye
-        const totalSteps = duration / stepTime;
-        const increment = targetValue / totalSteps;
+    // 2. HERO SLIDER
+    const slides = document.querySelectorAll('.slide');
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 6000);
+    }
 
-        let currentCount = 0;
-
-        const updateCount = () => {
-            currentCount += increment;
-            if (currentCount < targetValue) {
-                targetElement.innerText = Math.ceil(currentCount);
-                setTimeout(updateCount, stepTime);
+    // 3. COUNTER ANİMASYONU
+    const startCounter = (el) => {
+        const target = +el.getAttribute('data-target');
+        const duration = 2000;
+        const steps = duration / 16;
+        const inc = target / steps;
+        let current = 0;
+        const update = () => {
+            current += inc;
+            if (current < target) {
+                el.innerText = Math.ceil(current);
+                requestAnimationFrame(update);
             } else {
-                targetElement.innerText = targetValue;
+                el.innerText = target;
             }
         };
-        updateCount();
+        requestAnimationFrame(update);
     };
 
-    // Görünürlük kontrolü (Daha stabil versiyon)
-    const observerOptions = {
-        threshold: 0.2 // Elementin %20'si görünse bile başlasın (mobilde daha iyi çalışır)
-    };
-
-    const observer = new IntersectionObserver((entries) => {
+    const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // querySelector yerine doğrudan class kontrolü
-                const counter = entry.target.classList.contains('counter-target')
-                    ? entry.target
-                    : entry.target.querySelector('.counter-target');
-
-                if (counter && counter.getAttribute('data-done') !== 'true') {
-                    counter.setAttribute('data-done', 'true'); // Tekrar tetiklenmesini engelle
-                    startCounter(counter);
-                }
+                const counters = entry.target.querySelectorAll
+                    ? entry.target.querySelectorAll('.counter-target')
+                    : [];
+                const direct = entry.target.classList.contains('counter-target') ? [entry.target] : [];
+                [...counters, ...direct].forEach(c => {
+                    if (c.getAttribute('data-done') !== 'true') {
+                        c.setAttribute('data-done', 'true');
+                        startCounter(c);
+                    }
+                });
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.3 });
 
-    // Tüm istatistik itemlarını veya doğrudan sayıları izle
-    document.querySelectorAll('.stat-item, .counter-target').forEach(item => observer.observe(item));
+    document.querySelectorAll('.hcb-item, .counter-target').forEach(el => counterObserver.observe(el));
 
-    // 3. FORM GÖNDERİMİ (SİMLE)
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Burada normalde API isteği (fetch) yapılır.
-            alert('Talebiniz başarıyla alınmıştır. Teknik ekibimiz en kısa sürede dönüş yapacaktır.');
-            contactForm.reset();
+    // 4. SCROLL REVEAL
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, i * 80);
+            }
         });
-    }
-});
+    }, { threshold: 0.1 });
 
-// GALERİ LIGHTBOX MANTIĞI
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const lightboxCaption = document.getElementById('lightbox-caption');
-const galleryItems = document.querySelectorAll('.gallery-item');
-const closeBtn = document.querySelector('.lightbox-close');
-
-if (lightbox) {
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const img = item.querySelector('img');
-            lightbox.style.display = 'block';
-            lightboxImg.src = img.src;
-            lightboxCaption.innerHTML = img.alt;
-        });
+    document.querySelectorAll('.srv-card, .why-item, .av-box, .value-card, .team-card, .gallery-item').forEach((el, i) => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
     });
 
-    closeBtn.onclick = () => { lightbox.style.display = 'none'; };
+    // 5. NAVBAR SCROLL EFFECT
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            navbar.style.borderBottomColor = window.scrollY > 50 ? 'rgba(240,165,0,0.2)' : 'var(--border)';
+        });
+    }
 
-    // Ekranın dışına tıklayınca kapatma
-    lightbox.onclick = (e) => {
-        if (e.target === lightbox) { lightbox.style.display = 'none'; }
-    };
-}
+    // 6. LIGHTBOX
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+
+    if (lightbox) {
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        const closeLightbox = () => {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = '';
+        };
+        if (closeBtn) closeBtn.onclick = closeLightbox;
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+    }
+
+    // 7. FORM GÖNDERİM
+    const form = document.getElementById('contactForm');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button[type=submit]');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Talebiniz Alındı!';
+            btn.style.background = 'var(--success)';
+            btn.style.color = '#fff';
+            setTimeout(() => {
+                btn.innerHTML = original;
+                btn.style.background = '';
+                btn.style.color = '';
+                form.reset();
+            }, 3500);
+        });
+    }
+
+    // 8. SMOOTH SCROLL
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            const target = document.querySelector(anchor.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const slides = document.querySelectorAll(".slide");
+    const lines = document.querySelectorAll(".hero-title .line");
+    const desc = document.querySelector(".hero-desc");
+
+    let current = 0;
+
+    function applyText(slide) {
+        lines[0].textContent = slide.dataset.line1;
+        lines[1].textContent = slide.dataset.line2;
+        lines[2].textContent = slide.dataset.line3;
+        desc.textContent   = slide.dataset.desc;
+    }
+
+    function changeSlide(index) {
+        slides.forEach(s => s.classList.remove("active"));
+        slides[index].classList.add("active");
+        applyText(slides[index]);
+    }
+
+    applyText(slides[0]); // ilk açılış
+
+    setInterval(() => {
+        current = (current + 1) % slides.length;
+        changeSlide(current);
+    }, 5000);
+
+});
