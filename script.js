@@ -181,3 +181,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 5000);
 
 });
+
+const galleryContainer = document.getElementById('gallery-container');
+    let galleryHTML = '';
+
+    // 1'den 60'a kadar döngü
+    for (let i = 1; i <= 54; i++) {
+        // Alt metni (alt tag) dinamik ayarlayabiliriz veya genel bir isim verebiliriz
+        // Eğer ilk 10 resim için özel isminiz varsa onları manuel ekleyip döngüyü 11'den başlatabilirsiniz.
+        let altText = "Turkoğlu Gemi Bakım Referans - " + i;
+
+        galleryHTML += `
+            <div class="gallery-item reveal">
+                <img src="img/${i}.jpeg" alt="${altText}">
+                <div class="gallery-overlay"><i class="fas fa-expand-alt"></i></div>
+            </div>
+        `;
+    }
+
+    // Oluşturulan HTML'i sayfaya bas
+    galleryContainer.innerHTML = galleryHTML;
